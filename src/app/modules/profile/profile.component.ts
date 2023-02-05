@@ -78,7 +78,6 @@ export class ProfileComponent implements OnInit {
   
       dialogRef.afterClosed().subscribe((result: string) => {
         console.log('The dialog was closed');
-        //this.animal = result;
         if(result === "Updated"){
           this.getUserDetails();
         }
@@ -95,7 +94,6 @@ export class ProfileComponent implements OnInit {
   
       dialogRef.afterClosed().subscribe((result: string) => {
         console.log('The dialog was closed');
-        //this.animal = result;
         if(result === "Updated"){
           this.getUserDetails();
         }
