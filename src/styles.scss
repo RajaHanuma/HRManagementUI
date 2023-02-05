@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.font_head{
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.primary_button{
+    background-color: #3a3e59;
+    border: 3px solid #3a3e59;
+    padding: 5px 28px;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 15px;
+    color: white;
+}
+.primary_button:hover{
+    background-color: white;
+    border: 3px solid #3a3e59;
+    padding: 5px 28px;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 15px;
+    color: #3a3e59;
+}
+
+//matform feilds
+.mat-form-field{
+    width: 100% !important;
+}
+
+.material-symbols-outlined {
+  /*font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48*/
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+  color: #0b7c7efd;
+  //color: #000000;
+}
+
+.mat-header-row[_ngcontent-rpw-c190] {
+    min-height: 45px !important;
+    background-color: #c2f3f4 !important;
+    color: #0b7c7efd !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.border-pd{
+    padding: 2% 2% 0% 3%;
+}
+
+.mat-datepicker-toggle-default-icon {
+    height: 19px !important;
+}
+.mat-form-field-infix {
+    display: flex !important;
+    .mat-icon-button{
+        height: 0px !important;
+        line-height: 0px !important;
+    }
+}

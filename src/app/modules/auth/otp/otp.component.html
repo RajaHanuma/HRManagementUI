@@ -1,0 +1,54 @@
+<div class="login_full">
+    <div class="login_area">
+        <div class="left">
+            <div >
+                <div>
+                    <div class="mb-2">
+                        <img width="150px" src="../../assets/login-left-img.png" alt="">
+                    </div>
+                    <div class="font_head">Raja Tech Solutions</div>
+                    <div class="mt-5">We built for feature</div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right_login">
+                <div class="white-box">
+                    <div class="form_area">
+                        <form #f="ngForm" name="form" (ngSubmit)="submit(f)">
+                            <div>
+                                <div class="head_login mb-3">
+                                    <div class="font_head headerColor">Enter OTP</div>
+                                </div>
+                                <div class="email_div">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Enter OTP</mat-label>
+                                        <input matInput name="otp" [(ngModel)]="otpData.otp" 
+                                        #otp="ngModel" required>
+                                        <mat-error *ngIf="f.submitted && otp.invalid">
+                                            <mat-error *ngIf="f.submitted && otp.errors?.['required']">
+                                                Otp is <strong>required</strong>
+                                            </mat-error>
+                                        </mat-error>
+                                      </mat-form-field>
+                                </div>
+                                <!--<div class="pass_div">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput name="password" [(ngModel)]="loginData.password">
+                                      </mat-form-field>
+                                </div>
+                                <div class="forgot_pass_head">
+                                    <div class="forgot_pass_inline">Forgot Password?</div>
+                                </div>-->
+                                <div class="submit_div">
+                                    <button type="submit" class="primary_button">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

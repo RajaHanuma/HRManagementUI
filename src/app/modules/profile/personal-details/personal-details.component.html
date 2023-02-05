@@ -1,0 +1,120 @@
+<div class="border-pd">
+    <div class="onbrd-new show-shadow">
+        <div class="emp-det mt-4">Employment Details</div>
+        <div class="mt-3">
+            <form #f="ngForm" (ngSubmit)="submit(f)">
+                <div class="row">
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)]="formData.dateOfBirth"
+                             (ngModelChange)="dateChanged()">
+                             <mat-datepicker-toggle  [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <!--<mat-error *ngIf="f.submitted && firstname.invalid">
+                                <mat-error *ngIf="f.submitted && firstname.errors?.['required']">
+                                    First Name is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Blood Group</mat-label>
+                            <input matInput name="bloodGroup" [(ngModel)]="formData.bloodGroup"
+                             autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && lastname.invalid">
+                                <mat-error *ngIf="f.submitted && lastname.errors?.['required']">
+                                    Last Name is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Father Name</mat-label>
+                            <input matInput name="fatherName" [(ngModel)]="formData.fatherName"
+                             autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && email.invalid">
+                                <mat-error *ngIf="f.submitted && email.errors?.['required']">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Mother Name</mat-label>
+                            <input matInput name="motherName" [(ngModel)]="formData.motherName"
+                             autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && email.invalid">
+                                <mat-error *ngIf="f.submitted && email.errors?.['required']">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Marital Status</mat-label>
+                            <!--<input matInput name="lastname" [(ngModel)]="formData.lastname"
+                            #lastname="ngModel" required>-->
+                            <mat-select [(ngModel)]="formData.maritialStatus" name="maritialStatus">
+                                <mat-option>Clear</mat-option>
+                                <mat-option value="Single">Single</mat-option>
+                                <mat-option value="Female">Married</mat-option>
+                            </mat-select>
+                            <!--<mat-error *ngIf="f.submitted && gender.invalid">
+                                <mat-error *ngIf="f.submitted && gender.errors?.['required']">
+                                    Gender is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Spouse Name</mat-label>
+                            <input matInput name="spouseName" [(ngModel)]="formData.spouseName"
+                             autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && empCode.invalid">
+                                <mat-error *ngIf="f.submitted && empCode.errors?.['required']">
+                                    Employee Code is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Marriage Anniversiry</mat-label>
+                            <input matInput [matDatepicker]="pickerAnn" name="marrAnniversiry" 
+                            [(ngModel)]="formData.marrAnniversiry"(ngModelChange)="dateChanged()">
+                            <mat-datepicker-toggle  [for]="pickerAnn"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerAnn></mat-datepicker>
+                            <!--<mat-error *ngIf="f.submitted && dateOfJoin.invalid">
+                                <mat-error *ngIf="f.submitted && dateOfJoin.errors?.['required']">
+                                    Date of Joining is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="d-flex">
+                        <!--<div class="cancel_div">
+                            <button type="button" (click)="cancel()" class="cancel_button">Cancel</button>
+                        </div>
+                        <div class="submit_div">
+                            <button type="submit" class="submit_button">{{userId ? 'Update' : 'Submit'}}</button>
+                        </div>-->
+                        <mat-dialog-actions align="end">
+                            <div class="cancel_div">
+                                <button mat-button mat-dialog-close>Cancel</button>
+                            </div>
+                            <div class="submit_div">
+                                <button type="submit" mat-button cdkFocusInitial class="submit_button">Update</button>
+                            </div>
+                          </mat-dialog-actions>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

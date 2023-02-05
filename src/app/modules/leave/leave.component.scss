@@ -1,0 +1,67 @@
+p {
+    font-family: Lato;
+  }
+
+  .org-top{
+    padding-top: 2% ;
+    padding-left: 3%;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    /*.actv-btn{
+      width: 100px;
+    }
+    .inactv-btn{
+      width: 100px;
+    }*/
+    .app-lve{
+      width: 170px;
+      background-color: #0b7c7efd;
+      color: white;
+    }
+  }
+  
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+    width: 95%;
+    margin-left: 3%;
+    border-radius: 10px;
+  }
+  
+  .mat-table {
+    overflow: hidden;
+    max-height: 500px;
+    border-radius: 10px;
+  }
+
+  .mat-header-row{
+    min-height: 45px !important;
+  }
+
+  .mat-row, .mat-footer-row {
+    min-height: 43px;
+  }
+
+  .mat-header-cell {
+    background-color: #c2f3f4;
+    color: #0b7c7efd;
+  }
+
+  .show-shadow{
+    text-align: center;
+    //width: 76%;
+    border: 2px solid white;
+    /* margin-left: 12%; */
+    padding: 10px;
+    background-color: white;
+    //box-shadow: 0px 5px 13px 2px #888888;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    border-radius: 5px;
+    /* margin-top: 8%; */
+    //margin: 8% 10% 10% 20%;
+    border-top: 3px solid #0b7c7efd;
+}

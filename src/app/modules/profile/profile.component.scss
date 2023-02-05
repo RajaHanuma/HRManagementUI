@@ -1,0 +1,150 @@
+.profile-head{
+    .profile-fir-row{
+        display: flex;
+        //margin: 25px 25px;
+        margin: 2% 3% 2% 3%;
+        .profile-det{
+            width: 33%;
+            .profile-det-top{
+                display: flex;
+                padding-bottom: 10px;
+                .profile-image{
+                    height: 90px;
+                    width: 90px;
+                    margin-right: -16px;
+                    border-radius: 50px;
+                }
+                .pen-ht{
+                    padding-top: 60px;
+                }
+                .emp-name-des{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: left;
+                    padding-left: 20px;
+                    .emp-leave-name{
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                    .emp-leave-des{
+                        font-weight: 400;
+                        color: grey;
+                    }
+                }
+            }
+            .profile-comp{
+                padding-top: 15px;
+                font-weight: 500;
+            }
+            .p-15{
+                padding: 15px 0px;
+                .profile-per{
+                    color: grey;
+                    padding-left: 5px;
+                }
+                .profile-per-num{
+                    padding-left: 160px;
+                }
+            }
+            .profile-per-cpm{
+                padding-top: 15px;
+                text-align: left;
+                padding-left: 5px;
+            }
+        }
+        .emp-details{
+            margin-left: 30px;
+            width: 33%;
+            padding: 20px 30px;
+            .emp-details-head{
+                //padding-left: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+        .per-details{
+            margin-left: 30px;
+            width: 33%;
+            padding: 20px 30px;
+            .per-details-head{
+                //padding-left: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .profile-sec-row{
+        display: flex;
+        //margin: 25px 25px;
+        margin: 2% 3% 2% 3%;
+        .cont-details{
+            width: 33%;
+            padding: 20px 30px;
+            .cont-details-head{
+                //padding-left: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+        .emer-details{
+            margin-left: 30px;
+            width: 33%;
+            padding: 20px 30px;
+            .emer-details-head{
+                //padding-left: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+        .exp-details{
+            margin-left: 30px;
+            width: 33%;
+            padding: 20px 30px;
+            .exp-details-head{
+                //padding-left: 30px;
+                font-weight: 500;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+.show-shadow{
+    //width: 76%;
+    border: 2px solid white;
+    /* margin-left: 12%; */
+    padding: 10px;
+    background-color: white;
+    //box-shadow: 0px 5px 13px 2px #888888;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    border-radius: 5px;
+    /* margin-top: 8%; */
+    //margin: 8% 10% 10% 20%;
+    border-top: 3px solid #0b7c7efd;
+}
+.flex-dir{
+    display: flex;
+    padding: 3px 0px;
+}
+.let-width{
+    width: 50%;
+    text-align: left;
+    //padding-left: 20px;
+    color: grey;
+}
+.material-symbols-outlined{
+    font-size: 12px;
+    color: #0b7c7efd;
+}
+.pen-icon{
+    background: white;
+    padding: 4px 7px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+}
+.user-val{
+    width: 50%;
+    overflow: hidden;
+}

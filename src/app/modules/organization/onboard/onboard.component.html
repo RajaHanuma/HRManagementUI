@@ -1,0 +1,209 @@
+<div class="border-pd">
+    <div class="onbrd-new show-shadow">
+        <div class="emp-det mt-4">Employment Details</div>
+        <div class="mt-3">
+            <form #f="ngForm" (ngSubmit)="submit(f)">
+                <div class="row">
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First Name</mat-label>
+                            <input matInput name="firstname" [(ngModel)]="formData.firstName"
+                            #firstname="ngModel" required autocomplete="off">
+                            <mat-error *ngIf="f.submitted && firstname.invalid">
+                                <mat-error *ngIf="f.submitted && firstname.errors?.['required']">
+                                    First Name is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput name="lastname" [(ngModel)]="formData.lastName"
+                            #lastname="ngModel" required autocomplete="off">
+                            <mat-error *ngIf="f.submitted && lastname.invalid">
+                                <mat-error *ngIf="f.submitted && lastname.errors?.['required']">
+                                    Last Name is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Gender</mat-label>
+                            <!--<input matInput name="lastname" [(ngModel)]="formData.lastname"
+                            #lastname="ngModel" required>-->
+                            <mat-select [(ngModel)]="formData.gender" name="gender" #gender="ngModel" required>
+                                <mat-option>Clear</mat-option>
+                                <mat-option value="Male">Male</mat-option>
+                                <mat-option value="Female">Female</mat-option>
+                                <mat-option value="Trans Gender">Trans Gender</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="f.submitted && gender.invalid">
+                                <mat-error *ngIf="f.submitted && gender.errors?.['required']">
+                                    Gender is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput name="email" [(ngModel)]="formData.email"
+                            #email="ngModel" required autocomplete="off">
+                            <mat-error *ngIf="f.submitted && email.invalid">
+                                <mat-error *ngIf="f.submitted && email.errors?.['required']">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Mobile No</mat-label>
+                            <span matPrefix>+91 &nbsp;</span>
+                            <input type="tel" matInput placeholder="9999999999" name="mobileNo" [(ngModel)]="formData.mobileNo"
+                            #mobileNo="ngModel" required autocomplete="off">
+                            <mat-icon matSuffix>mode_edit</mat-icon>
+                            <mat-error *ngIf="f.submitted && mobileNo.invalid">
+                                <mat-error *ngIf="f.submitted && mobileNo.errors?.['required']">
+                                    Mobile No is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Employee Code</mat-label>
+                            <input matInput name="empCode" [(ngModel)]="formData.empCode"
+                            #empCode="ngModel" required autocomplete="off">
+                            <mat-error *ngIf="f.submitted && empCode.invalid">
+                                <mat-error *ngIf="f.submitted && empCode.errors?.['required']">
+                                    Employee Code is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Date of Joining</mat-label>
+                            <input matInput [matDatepicker]="picker" name="dateOfJoin" [(ngModel)]="formData.dateOfJoin"
+                            #dateOfJoin="ngModel" (ngModelChange)="dateChanged()" required>
+                            <mat-datepicker-toggle  [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error *ngIf="f.submitted && dateOfJoin.invalid">
+                                <mat-error *ngIf="f.submitted && dateOfJoin.errors?.['required']">
+                                    Date of Joining is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Department</mat-label>
+                            <mat-select [(ngModel)]="formData.dept" name="dept" #dept="ngModel" required>
+                                <mat-option>Clear</mat-option>
+                                <mat-option value="IT Department">IT Dept</mat-option>
+                                <mat-option value="Non IT Department">Non IT Dept</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="f.submitted && dept.invalid">
+                                <mat-error *ngIf="f.submitted && dept.errors?.['required']">
+                                    Department is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Designation</mat-label>
+                            <mat-select [(ngModel)]="formData.desg" name="desg" #desg="ngModel" required>
+                                <mat-option *ngFor="let option of disignationList" [value]="option">{{option}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="f.submitted && desg.invalid">
+                                <mat-error *ngIf="f.submitted && desg.errors?.['required']">
+                                    Designation is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Employee Type</mat-label>
+                            <mat-select [(ngModel)]="formData.empType" name="empType" #empType="ngModel" required>
+                                <mat-option value="Permanent">Permanent</mat-option>
+                                <mat-option value="Contractor">Contractor</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="f.submitted && empType.invalid">
+                                <mat-error *ngIf="f.submitted && empType.errors?.['required']">
+                                    Employee Type is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Role</mat-label>
+                            <mat-select [(ngModel)]="formData.role" name="role" #role="ngModel" required>
+                                <mat-option>Clear</mat-option>
+                                <mat-option value="JrSoftwareDeveloper">Jr Software Developer</mat-option>
+                                <mat-option value="SoftwareDeveloper">Software Developer</mat-option>
+                                <mat-option value="SrSoftwareDeveloper">Sr Software Developer</mat-option>
+                                <mat-option value="Accountant">Accountant</mat-option>
+                                <mat-option value="HR">HR</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="f.submitted && role.invalid">
+                                <mat-error *ngIf="f.submitted && role.errors?.['required']">
+                                    Role is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Reporting Manager</mat-label>
+                            <input matInput name="rptMgr" [(ngModel)]="formData.rptMgr"
+                            #rptMgr="ngModel" autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && rptMgr.invalid">
+                                <mat-error *ngIf="f.submitted && rptMgr.errors?.['required']">
+                                    Reporting Manager is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Probation</mat-label>
+                            <input matInput name="prob" [(ngModel)]="formData.prob"
+                            #prob="ngModel" autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && prob.invalid">
+                                <mat-error *ngIf="f.submitted && prob.errors?.['required']">
+                                    Probation is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-3 email_div">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Notice Period</mat-label>
+                            <input matInput name="notPer" [(ngModel)]="formData.notPer"
+                            #notPer="ngModel" autocomplete="off">
+                            <!--<mat-error *ngIf="f.submitted && notPer.invalid">
+                                <mat-error *ngIf="f.submitted && notPer.errors?.['required']">
+                                    Notice Period is <strong>required</strong>
+                                </mat-error>
+                            </mat-error>-->
+                        </mat-form-field>
+                    </div>
+                    <div class="d-flex">
+                        <div class="cancel_div">
+                            <button type="button" (click)="cancel()" class="cancel_button">Cancel</button>
+                        </div>
+                        <div class="submit_div">
+                            <button type="submit" class="submit_button">{{userId ? 'Update' : 'Submit'}}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

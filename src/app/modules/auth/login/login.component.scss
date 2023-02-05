@@ -1,0 +1,60 @@
+.login_full{
+    background-color: #3a3e59;
+    height: 100vh;
+    flex-direction: column;
+    .login_area{
+        display: flex;
+        height: 100vh;
+        .left{
+            width: 50%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .right{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .headerColor{
+                color: #3a3e59;
+            }
+            .right_login{
+                padding: 14% 17%;
+                background-color: white;//F4F3F3
+                border-radius: 10px;
+                .form_area{
+                    .head_login{
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+                    /*.email_div{
+                        margin: 10vh 0;
+                        .email_user{
+                            font-size: x-large;
+                        }
+                    }
+                    .pass_div{
+                        border-radius: 5px;
+                        margin-bottom: 3vh;
+                    }*/
+                    .forgot_pass_head{
+                        padding-bottom: 25px;
+                        .forgot_pass_inline{
+                            color: #3a3e59;
+                            font-weight: 600;
+                            cursor: pointer;
+                        }
+                    }
+                    .submit_div{
+                        padding: 10px 0;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

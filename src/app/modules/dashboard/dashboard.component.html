@@ -1,0 +1,196 @@
+<div class="dash-head">
+    <div class="dash-top">
+        <div class="dash-top-one">
+            <div class="dash-top-one-top show-shadow">
+                <div class="rem-leave-head"></div>
+                <div class="rem-leave font-head">Remaining Leaves</div>
+                <div class="rem-leave-days font-body">{{ dashboardData.leave.remaining }}</div>
+            </div>
+            <div class="dash-top-one-below show-shadow">
+                <div class="used-leave font-head">Used Leaves</div>
+                <div class="used-leave-days font-body">{{ dashboardData.leave.used }}</div>
+            </div>
+        </div>
+        <div class="dash-top-two">
+            <div class="dash-top-two-top show-shadow">
+                <div class="restr-leave font-head">Restricted Leaves</div>
+                <div class="restr-leave-days font-body">{{ dashboardData.leave.restricted }}</div>
+            </div>
+            <div class="dash-top-two-below show-shadow">
+                <div class="comp-leave font-head">Compoff Leaves</div>
+                <div class="comp-leave-days font-body">{{ dashboardData.leave.compoff }}</div>
+            </div>
+        </div>
+        <div class="dash-top-three">
+            <div class="dash-top-three-top show-shadow">
+                <table class="table-head">
+                    <tr class="tr-head">
+                        <th><div class="app-leave font-head">Applied Leaves</div></th>
+                        <th><div class="app-leave-type font-head">Type</div></th>
+                        <th><div class="app-leave-status font-head">Status</div></th>
+                    </tr>
+                    <tr *ngFor="let leave of dashboardData.leaveTransaction" class="tr-head pb-3">
+                        <td>{{ leave.startDate }}-{{ leave.endDate }}</td>
+                        <td>{{ leave.type }}</td>
+                        <td>{{ leave.status }}</td>
+                    </tr>
+                    <!--<tr class="tr-head">
+                        <td>3</td>
+                        <td>Casual</td>
+                        <td>Approved</td>
+                    </tr>
+                    <tr class="tr-head">
+                        <td>3</td>
+                        <td>Casual</td>
+                        <td>Approved</td>
+                    </tr>
+                    <tr class="tr-head">
+                        <td>3</td>
+                        <td>Casual</td>
+                        <td>Approved</td>
+                    </tr>-->
+                </table>
+            </div>
+        </div>
+        <div class="dash-top-four">
+            <div class="dash-top-four-top show-shadow">
+                <div class="app-leave">Applied Leaves</div>
+                <!--<mat-card class="demo-inline-calendar-card">
+                    <mat-calendar [(selected)]="selected"></mat-calendar>
+                </mat-card>
+                <p>Selected date: {{selected}}</p>-->
+            </div>
+        </div>
+    </div>
+    <div class="dash-mid">
+        <div class="dash-mid-one show-shadow">
+            <div class="emp-leave-head">Employee Leaves</div>
+            <div class="profile-head">
+                <div class="profile-top">
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-top">
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-top">
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-top">
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                    <div class="emp-leave">
+                        <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                        <div>
+                            <div class="emp-leave-name">Name</div>
+                            <div class="emp-leave-date">Dates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dash-mid-two show-shadow">
+            Leaves details
+        </div>
+    </div>
+    <div class="dash-event">
+        <div>Events</div>
+    </div>
+    <div class="dash-mid-last">
+        <div *ngFor="let event of dashboardData.eventDetails" class="dash-mid-last-two show-shadow margin-left">
+            <div class="dis-flex ">
+                <span class="material-symbols-outlined">
+                    {{event.eventName}}
+                </span>
+                <span  class="event-name">{{event.eventType}}</span>
+            </div>
+            <div class="emp-leave dis-flex">
+                <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                <div class="emp-evt-name">{{ event.name }}</div>
+                <div class="emp-evt-date">{{ event.eventDate }}</div>
+            </div>
+        </div>
+        <!--<div class="dash-mid-last-two show-shadow margin-all">
+            Events details
+        </div>
+        <div class="dash-mid-last-two show-shadow margin-all">
+            Events details
+        </div>
+        <div class="dash-mid-last-two show-shadow margin-right">
+            Events details
+        </div>-->
+    </div>
+    <div class="dash-last">
+        <div *ngFor="let event of dashboardData.hldyDetails" class="dash-mid-last-two show-shadow margin-left">
+            <div class="dis-flex">
+                <span class="material-symbols-outlined">
+                    {{event.eventName}}
+                </span>
+                <span class="event-name">{{event.eventType}}</span>
+            </div>
+            <div class="emp-leave dis-flex">
+                <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                <div class="emp-evt-name">{{ event.name }}</div>
+                <div class="emp-evt-date">{{ event.eventDate }}</div>
+            </div>
+        </div>
+        <!--<div class="dash-last-one">
+            <div>Holidays</div>
+        </div>-->
+        <!--<div class="dash-mid-last-two show-shadow margin-left">
+            Events details
+        </div>
+        <div class="dash-mid-last-two show-shadow margin-all">
+            Events details
+        </div>
+        <div class="dash-mid-last-two show-shadow margin-all">
+            Events details
+        </div>
+        <div class="dash-mid-last-two show-shadow margin-right">
+            Events details
+        </div>-->
+    </div>
+</div>

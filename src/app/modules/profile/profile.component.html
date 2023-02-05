@@ -1,0 +1,197 @@
+<div class="profile-head">
+    <div class="profile-fir-row">
+        <div class="profile-det show-shadow">
+            <div class="profile-det-top">
+                <img class="profile-image" src="../../assets/menew.jpg" alt="">
+                <div class="pen-ht  cursor-pointer">
+                    <div class="pen-icon">
+                        <div><span class="material-symbols-outlined">edit</span></div>
+                    </div>
+                </div>
+                <div class="emp-name-des">
+                    <div class="emp-leave-name">{{ userData.firstName + ' ' + userData.lastName }}</div>
+                    <div class="emp-leave-des">{{ userData.designation }}</div>
+                </div>
+            </div>
+            <div>
+                <div class="profile-comp">Profile Completness</div>
+                <div class="d-flex p-15">
+                    <div class="profile-per">Profile Percentage</div>
+                    <div class="profile-per-num">{{ width }}%</div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" [style.width.%]="getProfilePer()" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="profile-per-cpm">Your profile is completed.</div>
+        </div>
+        <div class="emp-details show-shadow">
+            <div class="flex-dir d-flex">
+                <div class="emp-details-head">Employee Details</div>
+                <!--<div class="ms-auto cursor-pointer">
+                    <div class="pen-icon">
+                        <div><span class="material-symbols-outlined">edit</span></div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Name</div>
+                <div class="user-val">{{ userData.firstName + ' ' + userData.lastName }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Email</div>
+                <div class="user-val">{{ userData.email }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Designation</div>
+                <div class="user-val">{{ userData.designation }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Employee Type</div>
+                <div class="user-val">{{ userData.empType }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Employee Code</div>
+                <div class="user-val">{{ userData.empCode }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Date of Joining</div>
+                <div class="user-val">{{ userData.dateOfJoining | date: 'dd/MM/yyyy' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Department</div>
+                <div class="user-val">{{ userData.department }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Reporting Manager</div>
+                <div class="user-val">{{ userData?.reportingManager || '-'}}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Role</div>
+                <div class="user-val">{{ userData.role }}</div>
+            </div>
+        </div>
+        <div class="per-details show-shadow">
+            <div class="flex-dir">
+                <div class="per-details-head">Personal Details</div>
+                <div class="ms-auto cursor-pointer">
+                    <div class="pen-icon">
+                        <div (click)="getPersonalDetails()">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Date of Birth</div>
+                <div class="user-val">{{ userData.dateOfBirth | date: 'dd/MM/yyyy' || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">blood Group</div>
+                <div class="user-val" class="user-val">{{ userData.bloodGroup || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Father Name</div>
+                <div class="user-val" class="user-val">{{ userData.fatherName || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Mother Name</div>
+                <div class="user-val" class="user-val">{{ userData.motherName || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Marital Status</div>
+                <div class="user-val" class="user-val">{{ userData.maritialStatus || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Spouse Name</div>
+                <div class="user-val" class="user-val">{{ userData.spouseName || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Marriage Anniversiry</div>
+                <div class="user-val" class="user-val">{{ userData.marrAnniversiry || '-' }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-sec-row">
+        <div class="cont-details show-shadow">
+            <div class="flex-dir">
+                <div class="cont-details-head">Contact Details</div>
+                <div class="ms-auto cursor-pointer">
+                    <div class="pen-icon">
+                        <div (click)="getContactDetails()">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Mobile Number</div>
+                <div class="user-val">{{ userData.mobile || '-' }}</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Personal Email</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Present Address</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Permanent Address</div>
+                <div class="user-val">{{ userData.address.city || '-' }}</div>
+            </div>
+        </div>
+        <div class="emer-details show-shadow">
+            <div class="flex-dir">
+                <div class="emer-details-head">Emergance Contact Details</div>
+                <div class="ms-auto cursor-pointer">
+                    <div class="pen-icon">
+                        <div (click)="getEmerDetails()">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Name</div>
+                <div class="user-val">adsfefd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Contact</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Relation</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+        </div>
+        <div class="exp-details show-shadow">
+            <div class="flex-dir">
+                <div class="exp-details-head">Experience Details</div>
+                <div class="ms-auto cursor-pointer">
+                    <div class="pen-icon">
+                        <div (click)="getExpDetails()">
+                            <span class="material-symbols-outlined">edit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Organization</div>
+                <div class="user-val">adsfefd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">Designation</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">From</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+            <div class="flex-dir">
+                <div class="let-width">To</div>
+                <div class="user-val">crfgrvd</div>
+            </div>
+        </div>
+    </div>
+</div>

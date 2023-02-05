@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="selected-date-wrapper">
+      <button mat-icon-button (click)="onPreviousDay()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+  
+      <span (click)="calendarVisible = !calendarVisible">{{ selectedDate | date }}</span>
+  
+      <button mat-icon-button (click)="onNextDay()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+    <div class="calendar-wrapper" *ngIf="calendarVisible">
+  
+      <mat-calendar
+        [selected]="selectedDate"
+        (selectedChange)="onSelectedChange($event)"
+        class="mat-elevation-z3">
+      </mat-calendar>
+  
+    </div>
+  </div>
+  

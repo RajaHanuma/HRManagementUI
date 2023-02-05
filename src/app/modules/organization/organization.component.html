@@ -1,0 +1,76 @@
+<div>
+  <div class="org-top">
+    <div class="switch-btn-area d-flex">
+      <div class="switch-btn" (click)="changeStatus('Active')" [class.is-active]="status === 'Active'">Active</div>
+      <div class="switch-btn" (click)="changeStatus('Inactive')" [class.is-active]="status === 'Inactive'">Inactive</div>
+    </div>
+    <div class="ms-auto pe-4">
+      <button mat-raised-button class="onbrd-btn" *ngIf="currentUser.userType === 'HR'"
+       (click)="getOnboard()">
+        + Onboard Employee
+      </button>
+    </div>
+  </div>
+
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Employee Code Column -->
+      <ng-container matColumnDef="empCode">
+        <mat-header-cell *matHeaderCellDef> Employee Code </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.empCode || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Employee Name Column -->
+      <ng-container matColumnDef="empName">
+        <mat-header-cell *matHeaderCellDef> Employee Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstName + ' ' + element.lastName || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.gender || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Designation Column -->
+      <ng-container matColumnDef="designation">
+        <mat-header-cell *matHeaderCellDef> Designation </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.designation || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Reporting Manager Column -->
+      <ng-container matColumnDef="reportingManager">
+        <mat-header-cell *matHeaderCellDef> Reporting Manager </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.reportingManager || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Email Id Column -->
+      <ng-container matColumnDef="emailId">
+        <mat-header-cell *matHeaderCellDef> Email Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email || "-"}} </mat-cell>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="isActive">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div class="status-toggle">
+            <div class="toggle d-flex" [class.isActive]="element.isActive"  (click)="changeEmpStatus(element,$event)">
+              <div class="status-actv" [class.show]="!element.isActive"></div>
+              <div class="status-actv" [class.show]="element.isActive"></div>
+            </div>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="cursor-pointer" (click)="updateUser(row)"></mat-row>
+    </mat-table>
+    <mat-paginator class="page-nav" #paginator [pageSize]="10"  [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+  </div>
+</div>
