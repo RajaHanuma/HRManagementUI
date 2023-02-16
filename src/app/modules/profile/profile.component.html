@@ -132,13 +132,21 @@
                 <div class="let-width">Personal Email</div>
                 <div class="user-val">crfgrvd</div>
             </div>
-            <div class="flex-dir">
+            <!--<div class="flex-dir">
                 <div class="let-width">Present Address</div>
                 <div class="user-val">crfgrvd</div>
-            </div>
+            </div>-->
             <div class="flex-dir">
-                <div class="let-width">Permanent Address</div>
-                <div class="user-val">{{ userData.address.city || '-' }}</div>
+                <div class="let-width">Address</div>
+                <div class="user-val">
+                    <!--<span *ngIf = "userData.address?.city" >
+                        {{ userData.address?.city || '-' }}
+                    </span>-->
+                    {{ userData.address?.city || '-' }}, 
+                    {{ userData.address?.state || '-' }}, 
+                    {{ userData.address?.country || '-' }}, 
+                    {{ userData.address?.pincode || '-' }}
+                </div>
             </div>
         </div>
         <div class="emer-details show-shadow">
@@ -165,6 +173,8 @@
                 <div class="user-val">crfgrvd</div>
             </div>
         </div>
+    </div>
+    <div class="profile-sec-row">
         <div class="exp-details show-shadow">
             <div class="flex-dir">
                 <div class="exp-details-head">Experience Details</div>

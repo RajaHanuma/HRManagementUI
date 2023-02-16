@@ -1,5 +1,12 @@
 .onbrd-new{
     padding: 20px 30px;
+    .emp-det{
+        font-weight: 600;
+    }
+    /*.form-control:disabled, .form-control[readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }*/
     .cancel_div{
         .cancel_button{
             padding: 5px 28px;
@@ -19,18 +26,4 @@
             background-color: #0b7c7efd;
         }
     }
-}
-
-.show-shadow{
-    //width: 76%;
-    border: 2px solid white;
-    /* margin-left: 12%; */
-    //padding: 10px;
-    background-color: white;
-    //box-shadow: 0px 5px 13px 2px #888888;
-    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
-    border-radius: 5px;
-    /* margin-top: 8%; */
-    //margin: 8% 10% 10% 20%;
-    border-top: 5px solid #0b7c7efd;
 }

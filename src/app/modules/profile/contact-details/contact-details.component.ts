@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrganizationService } from '../../organization/organization.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -14,6 +14,7 @@ export class ContactDetailsComponent implements OnInit {
   formData:any = {};
   userId: any = "";
   userData : any = {};
+  disabled: boolean = true;
   constructor(private orgService:OrganizationService,
               private router:Router,
               private activatedRoute: ActivatedRoute,
@@ -25,7 +26,7 @@ export class ContactDetailsComponent implements OnInit {
                }
 
   ngOnInit(): void {
-    
+    this.disabled = true;
   }
 
   submit(form:NgForm){
@@ -35,7 +36,11 @@ export class ContactDetailsComponent implements OnInit {
     let parems:any = {
       _id: this.userData._id,
       mobile : this.formData.mobileNo,
-      
+      address : {
+        city : this.formData.city,
+        state : this.formData.state,
+        pincode : this.formData.zipcode
+      }
     }
     console.log(parems);
     //console.log(this.loginData.password);
@@ -46,9 +51,13 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   patchData(){
+    console.log("User Data for contact", this.userData)
     this.formData = {
       mobileNo : this.userData.mobile,
-      
+        city : this.userData.address.city,
+        state : this.userData.address.state,
+        country : this.userData.address.country,
+        zipcode : this.userData.address.pincode
     };
   }
 
